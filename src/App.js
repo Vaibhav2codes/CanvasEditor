@@ -1,25 +1,39 @@
-import logo from './logo.svg';
+import React from 'react';
+import CanvasEditor from './CanvasEditor';
+import strokeImage from './Stroke.png';
+import designPatternImage from './designpattern.png';
+import coffee from './Coffee.jpg'
 import './App.css';
 
-function App() {
+const App = () => {
+  const templateData = {
+    caption: {
+      text: "1 & 2 BHK Luxury Apartments at just Rs.34.97 Lakhs",
+      position: { x: 50, y: 50 },
+      max_characters_per_line: 31,
+      font_size: 44,
+      alignment: "left",
+      text_color: "black"
+    },
+    cta: {
+      text: "Shop Now",
+      position: { x: 190, y: 320 },
+      text_color: "#F0FFF0",
+      background_color: "#000000"
+    },
+    image_mask: { x: 56, y: 442, width: 970, height: 600},
+    urls: {
+      mask: coffee,
+      stroke: strokeImage,
+      design_pattern: designPatternImage
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <CanvasEditor templateData={templateData} />
     </div>
   );
-}
+};
 
 export default App;
