@@ -21,7 +21,7 @@ const CanvasEditor = ({ templateData }) => {
 
     // Load design pattern
     const designPattern = new Image();
-    designPattern.src = addRandomQueryParam(templateData.urls.design_pattern);
+    designPattern.src = (templateData.urls.design_pattern);
     designPattern.onload = () => {
       ctx.drawImage(designPattern, 0, 0, canvas.width, canvas.height);
 
@@ -33,7 +33,7 @@ const CanvasEditor = ({ templateData }) => {
 
         // Apply mask stroke
         const maskStroke = new Image();
-        maskStroke.src = addRandomQueryParam(templateData.urls.stroke);
+        maskStroke.src = (templateData.urls.stroke);
         maskStroke.onload = () => {
           ctx.drawImage(maskStroke, templateData.image_mask.x+1, templateData.image_mask.y+1, templateData.image_mask.width, templateData.image_mask.height);
 
@@ -45,7 +45,7 @@ const CanvasEditor = ({ templateData }) => {
         };
       };
     };
-  }, []);
+  }, [backgroundColor,caption,callToAction,templateData]);
 
   const handleCaptionChange = (event) => {
     setCaption(event.target.value);
@@ -56,7 +56,9 @@ const CanvasEditor = ({ templateData }) => {
   };
 
   const handleBackgroundColorChange = (color) => {
+    
     setBackgroundColor(color.hex);
+    console.log(backgroundColor)
   };
 
   const addRandomQueryParam = (url) => {
@@ -151,7 +153,7 @@ const CanvasEditor = ({ templateData }) => {
           className="border border-gray-400 p-2 mb-2"
         />
         <div className="color-picker">
-          <ChromePicker color={backgroundColor} onChangeComplete={handleBackgroundColorChange} />
+          <ChromePicker color={backgroundColor} onChange={handleBackgroundColorChange} />
         </div>
       </div>
     </div>
