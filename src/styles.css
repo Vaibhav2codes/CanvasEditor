@@ -6,6 +6,7 @@
 /* Flex container for layout */
 .flex {
   display: flex;
+  width: 100%;
 }
 
 /* Container for canvas */
