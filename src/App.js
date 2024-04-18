@@ -11,7 +11,7 @@ const App = () => {
       text: "1 & 2 BHK Luxury Apartments at just Rs.34.97 Lakhs",
       position: { x: 50, y: 50 },
       max_characters_per_line: 31,
-      font_size: 44,
+      font_size: 40,
       alignment: "left",
       text_color: "black"
     },

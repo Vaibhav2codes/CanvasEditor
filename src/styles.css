@@ -1,21 +1,225 @@
+/* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,300);
+
+/* Flex container for layout */
+.flex {
+  display: flex;
+}
+
+/* Container for canvas */
 .canvas-container {
+  flex: 1; /* Take remaining space */
+  padding: 10px; /* Add some padding */
+}
+.ad-customization-container {
+  /* background-color: #f9f9f9; */
+  border-radius: 10px;
+  padding: 20px;
+  margin-right: 20px;
+  background: linear-gradient(to top right, #bf7a6b 0%, #e6d8a7 100%);
+}
+
+.ad-customization-heading {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+
+
+
+
+/* Container for editing options */
+.options-container {
+  padding: 20px; /* Add padding */
+  border-left: 1px solid #ccc; /* Add a border to separate from canvas */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin: 20px; /* Add margin */
 }
 
-.canvas-editor {
-  border: 1px solid #ccc;
-  padding: 20px; /* Add padding */
-}
-
-.canvas-input {
-  border: 1px solid #ccc;
-  padding: 8px;
-  margin-bottom: 10px;
-}
-
+/* Color picker styles */
 .color-picker {
-  margin-top: 10px;
+  position: relative; /* Position relative for color picker button */
+  margin-top: 5px; /* Add some margin at the top */
 }
+
+/* Color list container */
+.color-list {
+  display: flex; /* Display colors in a row */
+  flex-wrap: wrap; /* Allow wrapping */
+}
+
+/* Individual color box */
+.color-box {
+  width: 30px; /* Set width */
+  height: 30px; /* Set height */
+  margin-right: 5px; /* Add some margin between boxes */
+  margin-bottom: 5px; /* Add some margin between rows */
+  border: 1px solid #ccc; /* Add border */
+  cursor: pointer; /* Change cursor to pointer */
+  border-radius: 50%; /* Make it rounded */
+}
+.color-box:hover{
+  transform: scale(1.1);
+}
+
+/* Color picker button */
+.color-picker-btn {
+  width: 30px; /* Set width */
+  height: 30px; /* Set height */
+  background-color: #ccc; /* Set background color */
+  border: none; /* Remove border */
+  margin-right: 5px; /* Add some margin between boxes */
+  margin-bottom: 5px; /* Add some margin between rows */
+  cursor: pointer; /* Change cursor to pointer */
+  border-radius: 50%; /* Make it rounded */
+}
+
+/* Hover styles for color picker button */
+.color-picker-btn:hover {
+  background-color: #ddd; /* Darken background color on hover */
+  transform: scale(1.1);
+}
+
+.upload-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 60px;
+  border: 2px dashed #6c757d;
+  border-radius: 5px;
+  background-color: #ffffff;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.upload-box h2 {
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.upload-box input[type="file"] {
+  display: none;
+}
+
+.upload-box label {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #ffffff;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.upload-box p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #6c757d;
+}
+/* Input styles */
+.input-container input[type='text'] {
+
+  padding: 10px; /* Add padding */
+  border: 1px solid #ccc; /* Add border */
+  border-radius: 5px; /* Make it rounded */
+}
+
+/* Canvas styles */
+canvas {
+  width: 100%; /* Take full width */
+  height: auto; /* Let height adjust proportionally */
+  border: 1px solid #ccc; /* Add border */
+}
+
+
+
+
+.container {
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to top right, #bf7a6b 0%, #e6d8a7 100%);
+}
+
+.form {
+  width: 400px;
+  
+}
+
+.file-upload-wrapper {
+  position: relative;
+  font-size: 22px;
+  width: 100%;
+  height: 40px;
+  
+}
+
+.file-upload-wrapper:after {
+  content: attr(data-text);
+  font-size: 14px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #fff;
+  padding: 10px 15px;
+  display: block;
+  width: calc(100% - 40px);
+  pointer-events: none;
+  z-index: 20;
+  height: 40px;
+  line-height: 40px;
+  color: #999;
+  border-radius: 5px 10px 10px 5px;
+  font-weight: 300;
+}
+
+.file-upload-wrapper:before {
+  content: 'Upload';
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-block;
+  height: 40px;
+  background: #4daf7c;
+  color: #fff;
+  font-weight: 600;
+  z-index: 25;
+  font-size: 15px;
+  line-height: 60px;
+  padding: 0 15px;
+  padding-bottom: 20px;
+  text-transform: uppercase;
+  pointer-events: none;
+  border-radius: 0 5px 5px 0;
+}
+
+.file-upload-wrapper:hover:before {
+  background: #449c6e;
+}
+
+.file-upload-wrapper input {
+  opacity: 0;
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  display: block;
+  cursor: pointer;
+  width: 100%;
+}
+
